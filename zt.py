@@ -37,7 +37,7 @@ def ztx(n, pk, ctxt):
     l = int(gmpy2.log(n))
     ll = int(gmpy2.log(l))
     n2 = int(n // 2)
-    sql = sq // l
+    sql = sq // l // l
     #sqm = (sq + (sqs))
     sqh = sq // 2
     sqm = (sq - (l * l))
@@ -80,7 +80,7 @@ def ztx(n, pk, ctxt):
     q = n // p
     return p, q
 
-psize = 28
+psize = 32
 sk, pk, n, t, p, q = keygen(psize)
 print(t, p, q)
 print(n % t)
