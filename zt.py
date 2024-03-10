@@ -46,6 +46,8 @@ def ztx(n, pk, ctxt):
     #a = ((n2 - sq) * 1) + sqs
     y = ((n2 - sq) * 2) + (sqs * 2)
     a = sq + (sqs * l * ll)
+    if a % 2 == 0:
+        a += 1
     #a = ((n2 - sq) * 2)
     #x = sq2
     #a = sq
@@ -60,7 +62,7 @@ def ztx(n, pk, ctxt):
     #while ((n % a) != x):
     #while b*b != b2:
         #a = ((a - 2) % y)
-        a += 1
+        a += 2
         #b2 = a*a - n
         #b = isqrt(b2)
         #try:
