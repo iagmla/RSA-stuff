@@ -37,7 +37,7 @@ def ztx(n, pk, ctxt):
     l = int(gmpy2.log(n))
     ll = int(gmpy2.log(l))
     n2 = int(n // 2)
-    sql = sq * l
+    sql = sq // l
     #sqm = (sq + (sqs))
     sqh = sq // 2
     sqm = (sq - (l * l))
@@ -45,7 +45,7 @@ def ztx(n, pk, ctxt):
     x = (n2 - sq2) * 2
     #a = ((n2 - sq) * 1) + sqs
     y = ((n2 - sq) * 2) + (sqs * 2)
-    a = sq + (sqs * l * ll)
+    a = sq + (sqs * l * ll) + sql
     if a % 2 == 0:
         a += 1
     #a = ((n2 - sq) * 2)
@@ -80,7 +80,7 @@ def ztx(n, pk, ctxt):
     q = n // p
     return p, q
 
-psize = 24
+psize = 28
 sk, pk, n, t, p, q = keygen(psize)
 print(t, p, q)
 print(n % t)
@@ -90,7 +90,7 @@ ctxt = encrypt(msg, pk, n)
 PTXT = decrypt(ctxt, sk, n)
 print(PTXT)
 s = time.time()
-p, q = fermat(n)
+#p, q = fermat(n)
 e = time.time()
 print(e - s)
 print(p, q)
