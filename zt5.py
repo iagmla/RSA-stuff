@@ -45,9 +45,8 @@ def ztx(n, psize):
     x = (n2 - sq2) * 2
     #a = ((n2 - sq) * 1) + sqs
     y = ((n2 - sq) * 2) + (sqs * 2)
-    a = (sq + (sqs * l * ll) + sql) + (((l * l * l * l) * ll) + (sqs * l) - (ll ** ll * l * ll * ll * l))
-    #a = (sq + (sqs * l * ll) + sql) + (((l * l * l * l) * ll) + (sqs * l) + (ll ** ll * l * ll * ll * l))
-    #a = (sq + (sqs * l * ll) + sql) + (((l * l * l * l) * ll) + (sqs * l) + (ll ** ll * l))
+    a = (sq + (sqs * l * ll) + sql) + (((l * l * l * l) * ll) + (sqs * l) + (ll ** ll * l)) + sql
+    #a = (sq + (sqs * l * ll) + sql) + (((l * l * l * l) * ll) + (sqs * l) + (ll ** ll * l * ll * ll * ll))
     if a % 2 == 0:
         a += 1
     #a = ((n2 - sq) * 2)
@@ -82,7 +81,7 @@ def ztx(n, psize):
     q = n // p
     return p, q
 
-psize = 36
+psize = 32
 sk, pk, n, t, p, q = keygen(psize)
 print(t, p, q)
 print(n % t)
